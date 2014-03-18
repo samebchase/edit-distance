@@ -7,7 +7,10 @@
          for b across string-b
          when (char-not-equal a b)
          count a)
-      (error "Hamming distance is only defined on strings of the same length.")))
+      (error 'different-length-error)))
 
 (defun levenshtein-distance (string-a string-b)
   0)
+
+(define-condition different-length-error (error)
+  ())

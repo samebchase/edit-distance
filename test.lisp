@@ -10,7 +10,8 @@
 (test hamming
   (is (= 3 (hamming-distance "toned" "roses")))
   (is (= 2 (hamming-distance "1011101" "1001001")))
-  (is (= 3 (hamming-distance "2173896" "2233796"))))
+  (is (= 3 (hamming-distance "2173896" "2233796")))
+  (signals edit-distance::different-length-error (hamming-distance "foobar" "foo")))
 
 (test levenshtein
   (is (= 3 (levenshtein-distance "toned" "roses")))
@@ -22,8 +23,10 @@
   (is (= 1 (levenshtein-distance "clojure" "closure")))
   (is (= 2 (levenshtein-distance "xyx" "xyyyx")))
   (is (= 6 (levenshtein-distance "" "123456")))
+
   (is (= 0
          (levenshtein-distance "Clojure" "Clojure")
          (levenshtein-distance "" "")))
+
   (is (= 10 (levenshtein-distance "ttttattttctg" "tcaaccctaccat")))
   (is (=  9 (levenshtein-distance "gaattctaatctc" "caaacaaaaaattt"))))
