@@ -10,12 +10,12 @@
 (test hamming
   (is (= 3 (hamming-distance "toned" "roses")))
   (is (= 2 (hamming-distance "1011101" "1001001")))
-  (is (= 3 (hamming-distance "3.2173896" "2233796"))))
+  (is (= 3 (hamming-distance "2173896" "2233796"))))
 
 (test levenshtein
   (is (= 3 (levenshtein-distance "toned" "roses")))
   (is (= 2 (levenshtein-distance "1011101" "1001001")))
-  (is (= 3 (levenshtein-distance "3.2173896" "2233796")))
+  (is (= 3 (levenshtein-distance "2173896" "2233796")))
 
   (is (= 3 (levenshtein-distance "kitten" "sitting")))
   (is (= 3 (levenshtein-distance "closure" "clojure")))
