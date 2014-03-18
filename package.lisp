@@ -4,7 +4,9 @@
 
 (defpackage #:edit-distance
   (:nicknames :edist)
-  (:use #:cl))
+  (:use #:cl)
+  (:export :hamming-distance
+           :levenshtein-distance))
 
 (defpackage #:edit-distance-test
   (:use #:cl
