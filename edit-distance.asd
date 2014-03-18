@@ -14,5 +14,6 @@
                #:optima
                #:alexandria)
   :components ((:file "package")
-               (:file "edit-distance")))
+               (:file "edit-distance")
+               (:file "test")))
 

@@ -1,1 +1,1 @@
-(defpackage :edit-distance)
+(in-package :edit-distance)

@@ -6,3 +6,7 @@
   (:nicknames :edist)
   (:use #:cl))
 
+(defpackage #:edit-distance-test
+  (:use #:cl
+        #:fiveam
+        #:edit-distance))
