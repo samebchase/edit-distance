@@ -10,6 +10,9 @@
   :description "Edit distance algorithms"
   :author "Samuel Chase <samebchase@gmail.com>"
   :license "Unknown"
+  :depends-on (#:fiveam
+               #:optima
+               #:alexandria)
   :components ((:file "package")
                (:file "edit-distance")))
 
