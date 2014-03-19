@@ -6,7 +6,7 @@
   (:nicknames :edist)
   (:use #:cl)
   (:export :hamming-distance
-           :levenshtein-distance))
+           :levenshtein-distance-rec))
 
 (defpackage #:edit-distance-test
   (:use #:cl
