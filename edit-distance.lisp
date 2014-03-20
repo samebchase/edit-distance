@@ -20,14 +20,12 @@
     (levenshtein-distance-aux string-a (length string-a) string-b (length string-b))))
 
 (defun indicator-cost (string-a i string-b j)
-  (let ((len-a (length string-a))
-        (len-b (length string-b))
-        (idx (1- i))
+  (let ((idx (1- i))
         (jdx (1- j)))
-    (assert (and (< idx len-a) (< jdx len-b)))
-  (if (char-equal (aref string-a idx) (aref string-b jdx))
-      0
-      1)))
+    (assert (and (< idx (length string-a)) (< jdx (length string-b))))
+    (if (char-equal (aref string-a idx) (aref string-b jdx))
+        0
+        1)))
 
 (define-condition different-length-error (error)
   ())
