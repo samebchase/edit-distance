@@ -13,20 +13,21 @@
   (is (= 3 (hamming-distance "2173896" "2233796")))
   (signals edit-distance::different-length-error (hamming-distance "foobar" "foo")))
 
-(test levenshtein-rec
+(test levenshtein-rec-trivial
+  (is (= 0 (levenshtein-distance-rec "" "")))
+  (is (= 0 (levenshtein-distance-rec "0" "0")))
+  (is (= 1 (levenshtein-distance-rec "1" "0")))
+  (is (= 6 (levenshtein-distance-rec "" "123456"))))
+
+(test levenshtein-distance-rec-non-trivial
   (is (= 3 (levenshtein-distance-rec "toned" "roses")))
   (is (= 2 (levenshtein-distance-rec "1011101" "1001001")))
   (is (= 3 (levenshtein-distance-rec "2173896" "2233796")))
-
   (is (= 3 (levenshtein-distance-rec "kitten" "sitting")))
-  (is (= 3 (levenshtein-distance-rec "closure" "clojure")))
+  (is (= 1 (levenshtein-distance-rec "closure" "clojure")))
   (is (= 1 (levenshtein-distance-rec "clojure" "closure")))
   (is (= 2 (levenshtein-distance-rec "xyx" "xyyyx")))
-  (is (= 6 (levenshtein-distance-rec "" "123456")))
-
-  (is (= 0
-         (levenshtein-distance-rec "Clojure" "Clojure")
-         (levenshtein-distance-rec "" ""))))
+  (is (= 0 (levenshtein-distance-rec "Clojure" "Clojure"))))
 
 ;; These take too long for the recursive implementation
 ;;
