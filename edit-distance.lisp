@@ -108,12 +108,3 @@ represented on the diagram by D.
 
 (define-condition different-length-error (error)
   ())
-
-(defun print-matrix (matrix)
-  (let* ((dimensions (array-dimensions matrix))
-         (rows (first dimensions))
-         (cols (second dimensions)))
-    (loop for i upto (1- rows) do
-           (loop for j upto (1- cols) do
-               (format t "~2a " (aref matrix i j))
-                finally (terpri)))))
